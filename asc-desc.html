@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example Vue ASC AND DESC</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+        #app {
+            width: 50%;
+            height: 100px;
+            margin: 0 auto;
+            margin-top: 5%;
+            border: 1px solid;
+            border-style: dashed;
+            padding: 15px;
+        }
+        #app button {
+            background-color: #00575e;
+            border: 1px solid #00575e;
+            height: 27px;
+            border-radius: 3px;
+        }
+        #app span {
+            margin-top: 25px;
+            position: absolute;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <button class="bnt btn-primary" v-on:click="incrementar()">Incrementar</button>
+        <button class="bnt btn-primary" v-on:click="decrementar()">Decrementar</button>
+        <br>
+        <span>Resultado: {{ contador }}</span>
+    </div>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data : {
+                contador : 0
+            },
+            methods: {
+                incrementar(){
+                    this.contador += 1;
+                },
+                decrementar(){
+                    this.contador -= 1;
+                }                  
+            }
+        })
+    </script>
+</body>
+</html>
